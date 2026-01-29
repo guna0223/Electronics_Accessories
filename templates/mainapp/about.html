@@ -1,0 +1,80 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}
+About Page
+{% endblock %}
+
+
+{% block content %}
+<section class="about-section">
+    <div class="container">
+
+        <!-- Heading -->
+        <div class="about-header text-center">
+            <h2>About PlugIn</h2>
+            <p>Your trusted destination for premium electronics accessories</p>
+        </div>
+
+        <!-- Content -->
+        <div class="row align-items-center gy-4">
+
+            <!-- Text -->
+            <div class="col-lg-6">
+                <h3>Who We Are</h3>
+                <p>
+                    PlugIn is a modern e-commerce platform dedicated to delivering
+                    high-quality electronics accessories that enhance your everyday
+                    digital experience. From durable cables to powerful chargers
+                    and immersive audio products, we focus on reliability, design,
+                    and performance.
+                </p>
+
+                <p>
+                    Our mission is simple — provide premium accessories at affordable
+                    prices while ensuring customer satisfaction, fast delivery,
+                    and trusted support.
+                </p>
+
+                <ul class="about-points">
+                    <li>✔ Premium quality products</li>
+                    <li>✔ Trusted brands & durability</li>
+                    <li>✔ Affordable pricing</li>
+                    <li>✔ Customer-first support</li>
+                </ul>
+            </div>
+
+            <!-- Image / Card -->
+            <div class="col-lg-6">
+                <div class="about-card">
+                    <h4>Why Choose PlugIn?</h4>
+                    <p>
+                        We carefully select and test every product before it reaches
+                        you. Whether you’re upgrading your setup or replacing an
+                        essential accessory, PlugIn ensures quality you can trust.
+                    </p>
+
+                    <div class="about-stats">
+                        <div>
+                            <h5>5k+</h5>
+                            <span>Happy Customers</span>
+                        </div>
+                        <div>
+                            <h5>500+</h5>
+                            <span>Products</span>
+                        </div>
+                        <div>
+                            <h5>24/7</h5>
+                            <span>Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

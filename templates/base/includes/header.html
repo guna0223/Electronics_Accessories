@@ -1,0 +1,125 @@
+<nav class="navbar navbar-expand-lg tech-navbar">
+    <div class="container-fluid">
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="{% url 'home_page' %}">PlugIn</a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible Content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <!-- LEFT MENU -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link {% if current_page == 'home' %}active{% endif %}"
+                        href="{% url 'home_page' %}">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if current_page == 'about' %}active{% endif %}"
+                        href="{% url 'about_page' %}">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if current_page == 'contact' %}active{% endif %}"
+                        href="{% url 'contact_page' %}">Contact</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if current_page == 'products' %}active{% endif %}"
+                        href="{% url 'products' %}">Products</a>
+                </li>
+
+                <!-- CATEGORY MEGA MENU -->
+                <li class="nav-item dropdown mega-dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        Category
+                    </a>
+
+                    <div class="dropdown-menu mega-menu">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h6>Cables</h6>
+                                <a class="dropdown-item" href="#">USB C</a>
+                                <a class="dropdown-item" href="#">Lightning</a>
+                                <a class="dropdown-item" href="#">HDMI</a>
+                            </div>
+                            <div class="col-md-3">
+                                <h6>Audio</h6>
+                                <a class="dropdown-item" href="#">Earphones</a>
+                                <a class="dropdown-item" href="#">Headphones</a>
+                                <a class="dropdown-item" href="#">Speakers</a>
+                            </div>
+                            <div class="col-md-3">
+                                <h6>Power</h6>
+                                <a class="dropdown-item" href="#">Power Banks</a>
+                                <a class="dropdown-item" href="#">Chargers</a>
+                                <a class="dropdown-item" href="#">Adapters</a>
+                            </div>
+                            <div class="col-md-3">
+                                <h6>Mobile</h6>
+                                <a class="dropdown-item" href="#">Cases</a>
+                                <a class="dropdown-item" href="#">Screen Guards</a>
+                                <a class="dropdown-item" href="#">Stands</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- SEARCH -->
+            <section class="form-section">
+                <form class="search-box" role="search" method="get" action="{% url 'search_products' %}">
+                    <input name="q" value="{{ query }}" type="search" placeholder="Search accessories..." />
+                    <i class="bi bi-search"></i>
+                </form>
+
+                <!-- THEME -->
+                <button class="theme-toggle">
+                    <i class="bi bi-moon"></i>
+                </button>
+
+                <!-- CART -->
+                <a href="#" class="cart-icon">
+                    <i class="bi bi-cart3"></i>
+                    <span class="cart-badge">3</span>
+                </a>
+                <!-- ACCOUNT -->
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                            data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle me-1"></i> 
+                            {% if user.is_authenticated %}
+                                {{user.username.capitalize}}
+                            
+                            {% else %}
+                                Hi User !
+                            {% endif %}
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            {% if user.is_authenticated %}
+                            <li>
+                                <form action="{% url 'logout' %}" method="post">
+                                    {% csrf_token %}
+                                    <button class="dropdown-item text-danger">Logout</button>
+                                </form>
+                            </li>
+                            {% else %}
+                            <li><a class="dropdown-item" href="{% url 'signup' %}">Register</a></li>
+                            <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+</nav>

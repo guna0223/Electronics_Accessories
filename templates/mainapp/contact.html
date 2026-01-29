@@ -1,0 +1,81 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}
+contact Page
+{% endblock %}
+
+
+{% block content %}
+<section class="contact-section">
+    <div class="container">
+
+        <!-- Header -->
+        <div class="contact-header text-center">
+            <h2>Contact Us</h2>
+            <p>We’re here to help. Reach out anytime!</p>
+        </div>
+
+        <div class="row gy-4 align-items-center">
+
+            <!-- Contact Info -->
+            <div class="col-lg-5">
+                <div class="contact-info">
+                    <h4>Get in Touch</h4>
+                    <p>
+                        Have a question about a product, order, or partnership?
+                        Our support team is always ready to assist you.
+                    </p>
+
+                    <ul class="contact-details">
+                        <li>📍 <span>India</span></li>
+                        <li>📧 <span>support@plugin.com</span></li>
+                        <li>📞 <span>+91 98765 43210</span></li>
+                    </ul>
+
+                    <div class="contact-social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x "></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+                <div class="contact-form">
+                    <h4>Send Us a Message</h4>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn contact-btn">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+
+{% block content %}
+<section id="home-carousel-section">
+    {% include 'mainapp/includes/carousel.html' %}
+</section>
+
+<section id="home-products-section" class="mt-5">
+    {% include 'products/includes/productSection.html' %}
+</section>
+
+{% endblock %}

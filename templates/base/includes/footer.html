@@ -1,0 +1,55 @@
+<div class="container py-5">
+    <div class="row gy-4">
+
+        <!-- Brand -->
+        <div class="col-lg-4 col-md-6">
+            <h4 class="footer-brand">PlugIn</h4>
+            <p class="footer-text">
+                Your one-stop shop for premium electronics accessories.
+                Quality cables, audio, chargers, and more.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6">
+            <h5 class="footer-title">Quick Links</h5>
+            <ul class="footer-links">
+                <li><a href="{% url 'home_page' %}">Home</a></li>
+                <li><a href="{% url 'products' %}">Products</a></li>
+                <li><a href="{% url 'about_page' %}">About</a></li>
+                <li><a href="{% url 'contact_page' %}">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Categories -->
+        <div class="col-lg-3 col-md-6">
+            <h5 class="footer-title">Categories</h5>
+            <ul class="footer-links">
+                <li><a href="#">Cables</a></li>
+                <li><a href="#">Audio</a></li>
+                <li><a href="#">Chargers</a></li>
+                <li><a href="#">Mobile Accessories</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-lg-3 col-md-6">
+            <h5 class="footer-title">Contact</h5>
+            <p class="footer-text mb-1">📍 India</p>
+            <p class="footer-text mb-1">📧 support@plugin.com</p>
+            <p class="footer-text">📞 +91 98765 43210</p>
+
+            <div class="footer-social mt-3">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Bottom -->
+<div class="footer-bottom text-center py-3">
+    © {{ year|default:2026 }} PlugIn. All Rights Reserved.
+</div>

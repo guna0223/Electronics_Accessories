@@ -1,0 +1,61 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Product Details{% endblock %}
+
+{% block content %}
+
+<section id="product-details-section" class="container py-5">
+
+    <!-- ONE ROW -->
+    <div class="row g-4 align-items-start">
+
+        <!-- LEFT SIDE -->
+        <div class="col-lg-6">
+            {% include 'products/includes/productImageCarousel.html' %}
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="col-lg-6 col-md-12">
+            <div class="product-info">
+
+                <img src="{{ product.thumbnail.url }}" alt="{{ product.title }}" class="thumbnail-img">
+
+                <h2 class="product-title">{{ product.title }}</h2>
+
+                <p class="product-desc">
+                    {{ product.desc }}
+                </p>
+
+                <div class="price-box">
+                    <span class="old-price">&#8377; {{ product.price }}</span>
+                    <span class="new-price">&#8377; {{ product.offer_price|floatformat:2 }}</span>
+                    <span class="discount text-success">
+                        ({{ product.discount }}% OFF)
+                    </span>
+                </div>
+
+                <div class="action-buttons mt-4">
+                    <a href="#" class="btn btn-outline-primary">
+                        <i class="bi bi-cart"></i>
+                    </a>
+
+                    <a href="{% url 'edit_product' product.pk %}" class="btn btn-warning">
+                        <i class="bi bi-pencil-fill"></i>
+                    </a>
+
+                    <a href="{% url 'delete_product' product.pk %}" class="btn btn-danger">
+                        <i class="bi bi-trash3-fill"></i>
+                    </a>
+
+                    <a href="{% url 'add_images' product.id %}" class="btn btn-outline-secondary">
+                        <i class="bi bi-cloud-plus-fill"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+<!-- IMAGE + VIDEO CAROUSEL -->
+<div id="productImageCarousel" class="carousel slide product-carousel" data-bs-ride="carousel">
+    {% if product.images.filter.exists %}
+    <div class="carousel-inner">
+        {% for media in product.images.all %}
+        {% if media.img %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <img src="{{ media.img.url }}" class="d-block w-100" alt="{{ media.caption }}">
+
+            <div class="carousel-actions">
+                <a href="{% url 'edit_pro_image' media.pk %}" class="btn btn-light edit">
+                    <i class="bi bi-pen"></i>
+                </a>
+                <a href="{% url 'del_pro_image' media.pk %}" class="btn btn-light delete text-danger">
+                    <i class="bi bi-x-lg"></i>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        {% for media in product.images.all %}
+        {% if media.video %}
+        <div class="carousel-item {% if not product.images.filter.exists %}active{% endif %}">
+
+            <video class="product-video w-100" controls poster="{% if media.img %}{{ media.img.url }}{% endif %}">
+                <source src="{{ media.video.url }}" type="video/mp4">
+            </video>
+
+            <div class="carousel-actions">
+                <a href="{% url 'edit_pro_image' media.pk %}" class="btn btn-light edit">
+                    <i class="bi bi-pen"></i>
+                </a>
+                <a href="{% url 'del_pro_image' media.pk %}" class="btn btn-light delete text-danger">
+                    <i class="bi bi-x-lg"></i>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+    <!-- controls (only if more then 1 image) -->
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#productImageCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#productImageCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+
+
+    {% else %}
+
+    <!-- NO IMAGE / VIDEO -->
+    <div class="d-flex align-items-center justify-content-center"
+        style="height: 420px; background: #111; color: #aaa; border-radius: 12px;">
+        <div class="text-center">
+            <p class="mb-2">No product images uploaded</p>
+            <small class="text-info">
+                Upload images to showcase this product
+            </small>
+        </div>
+    </div>
+
+    {% endif %}
+</div>
