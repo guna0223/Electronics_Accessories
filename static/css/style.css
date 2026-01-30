@@ -513,6 +513,34 @@ main {
     overflow: hidden;
 }
 
+/* edit btn  */
+.edit-del-btn {
+    margin-left: 40px !important;
+    position: relative !important;
+}
+
+.edit {
+    background: none !important;
+    color: var(--accent-green) !important;
+
+
+}
+
+.delete {
+    background: none !important;
+    position: absolute;
+}
+
+.edit:hover {
+    background-color: var(--accent-green) !important;
+    color: white !important;
+}
+
+.delete:hover {
+    background-color: red !important;
+    color: white !important;
+}
+
 .btn::before {
     content: '';
     position: absolute;
@@ -520,7 +548,9 @@ main {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(90deg,
+            transparent, rgba(255, 255, 255, 0.2),
+            transparent);
     transition: all var(--transition-slow);
 }
 
@@ -542,7 +572,8 @@ main {
 .btn-primary:hover {
     color: var(--white);
     transform: translateY(-3px) scale(1.02);
-    box-shadow: var(--shadow-glow-purple), 0 10px 30px rgba(139, 92, 246, 0.4);
+    box-shadow: var(--shadow-glow-purple),
+        0 10px 30px rgba(139, 92, 246, 0.4);
 }
 
 /* Outline Primary */
@@ -1934,3 +1965,56 @@ body.home-page .cart-icon {
         background: rgba(26, 26, 46, 0.95);
     }
 }
+
+/* from-section */
+
+/* *X**X*X**X*X**X*X*X*X
+
+ */
+
+/* Background */
+.save-form-section {
+    min-height: 100vh;
+    background: rgba(26, 26, 46, 0.9);
+    display: flex;
+    align-items: center;
+}
+
+/* Card */
+.save-form-card {
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(12px);
+}
+
+/* Inputs */
+.save-form-card .form-control,
+.save-form-card .form-select {
+    border-radius: 12px;
+    padding: 12px 14px;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.save-form-card .form-control:focus,
+.save-form-card .form-select:focus {
+    box-shadow: 0 0 0 0.2rem rgba(34, 197, 94, 0.25);
+}
+
+/* Button */
+.btn-gradient {
+    background: rgba(26, 26, 46, 0.9);
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    padding: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+   color: var(--text-muted);
+}
+
+/* end */

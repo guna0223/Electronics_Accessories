@@ -7,7 +7,7 @@
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
             <img src="{{ media.img.url }}" class="d-block w-100" alt="{{ media.caption }}">
 
-            <div class="carousel-actions">
+            <div class="carousel-actions edit-del-btn">
                 <a href="{% url 'edit_pro_image' media.pk %}" class="btn btn-light edit">
                     <i class="bi bi-pen"></i>
                 </a>
@@ -27,7 +27,7 @@
                 <source src="{{ media.video.url }}" type="video/mp4">
             </video>
 
-            <div class="carousel-actions">
+            <div class="carousel-actions" >
                 <a href="{% url 'edit_pro_image' media.pk %}" class="btn btn-light edit">
                     <i class="bi bi-pen"></i>
                 </a>

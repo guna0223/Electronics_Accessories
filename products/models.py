@@ -6,7 +6,7 @@ class Product(models.Model):
     title = models.CharField(max_length=224)
     desc = models.CharField(max_length=400)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    stock = models.PositiveIntegerField()
+    stock = models.PositiveIntegerField(null=False,blank=False,default=0)
     thumbnail = models.ImageField(upload_to='products/thumbnails')
     discount = models.DecimalField(
         max_digits=5,
